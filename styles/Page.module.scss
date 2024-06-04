@@ -1,0 +1,9 @@
+.container {
+    .title {
+        color: blue;
+        user-select: none;
+        &.active {
+            color: rgb(44, 172, 110);
+        }
+    }
+}
