@@ -2,9 +2,14 @@
 import Style from '@styles/Page.module.scss';
 import { useState } from 'react';
 import clsx from 'clsx';
-
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 export default function Home() {
     const [expanding, setExpanding] = useState(false);
+    const router = useRouter();
+    const handleNavigation = () => {
+        router.push('/youtube');
+    };
     const handleClick = () => {
         setExpanding(!expanding);
     };
@@ -20,6 +25,18 @@ export default function Home() {
                     hello
                 </h1>
             </div>
+            <ul>
+                <li>
+                    <Link href="/facebook">Facebook</Link>
+                </li>
+                <li
+                    onClick={() => {
+                        handleNavigation();
+                    }}
+                >
+                    Youtube
+                </li>
+            </ul>
         </div>
     );
 }
