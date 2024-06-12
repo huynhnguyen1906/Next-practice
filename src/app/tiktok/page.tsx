@@ -1,13 +1,13 @@
 'use client';
 import { useRouter } from 'next/navigation';
-export default function Youtube() {
+export default function Tiktok() {
     const router = useRouter();
     const handleNavigation = () => {
         router.push('/');
     };
     return (
         <div>
-            Youtube
+            Tiktok
             <button
                 onClick={() => {
                     handleNavigation();

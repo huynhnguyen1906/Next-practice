@@ -1,9 +1,23 @@
+'use client';
 import '@styles/GlobalStyles.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from '@/components/Header';
+import { Container } from 'react-bootstrap';
+import Footer from '@/components/Footer';
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="ja">
-            <body>{children}</body>
+            <head>
+                <meta charSet="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Next Practice</title>
+            </head>
+
+            <body>
+                <Header />
+                <Container>{children}</Container>
+                <Footer />
+            </body>
         </html>
     );
 }
