@@ -4,7 +4,6 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Table } from 'react-bootstrap';
 import IndexTable from '@/components/index.table';
 
 export default function Home() {
