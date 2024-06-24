@@ -31,6 +31,9 @@ export default function Home() {
                 <li>
                     <Link href="/facebook">Facebook</Link>
                 </li>
+                <li>
+                    <Link href="/tiktok">Tiktok</Link>
+                </li>
                 <li
                     onClick={() => {
                         handleNavigation();
