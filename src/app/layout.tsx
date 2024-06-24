@@ -1,6 +1,5 @@
 'use client';
 import '@styles/GlobalStyles.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '@/components/Header';
 import { Container } from 'react-bootstrap';
 import Footer from '@/components/Footer';
