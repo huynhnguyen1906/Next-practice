@@ -45,8 +45,7 @@ export default function IndexTable(props: Props) {
                             <td>{blog.title}</td>
                             <td>{blog.author}</td>
                             <td>
-                                <Button variant="primary">Edit</Button>
-                                <Button variant="warning" className="mx-3">
+                                <Button variant="warning" className="me-1">
                                     Edit
                                 </Button>
                                 <Button variant="danger">Delete</Button>
