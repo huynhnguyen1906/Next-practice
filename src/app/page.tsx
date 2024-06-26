@@ -4,7 +4,6 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import IndexTable from '@/components/index.table';
 
 export default function Home() {
     const [expanding, setExpanding] = useState(false);
@@ -42,7 +41,6 @@ export default function Home() {
                     Youtube
                 </li>
             </ul>
-            <IndexTable />
         </div>
     );
 }

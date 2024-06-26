@@ -2,6 +2,8 @@
 import { useRouter } from 'next/navigation';
 import axiosInstance from '@/lib/axiosInstance';
 import useSWR from 'swr';
+import IndexTable from '@/components/IndexTable';
+
 const fetcher = (url: string) => axiosInstance.get(url).then((res) => res.data);
 
 export default function Youtube() {
@@ -16,32 +18,21 @@ export default function Youtube() {
         revalidateOnReconnect: false,
     });
 
-    console.log(data);
+    console.log('data =>>>>', data);
+    if (!data) return <div>Loading...</div>;
     return (
-        <div>
+        <div className="mt-3">
             Youtube
             <button
                 onClick={() => {
                     handleNavigation();
                 }}
+                className="btn btn-primary ms-3"
             >
                 Back Home
             </button>
             <div>
-                {data ? (
-                    <div>
-                        {data.map((item: any, index: number) => {
-                            return (
-                                <div key={index}>
-                                    <h1>{item.title}</h1>
-                                    <p>{item.content}</p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                ) : (
-                    <div>Loading...</div>
-                )}
+                <IndexTable blogs={data} />
             </div>
         </div>
     );
