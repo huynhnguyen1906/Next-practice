@@ -18,7 +18,6 @@ export default function Youtube() {
         revalidateOnReconnect: false,
     });
 
-    console.log('data =>>>>', data);
     if (!data) return <div>Loading...</div>;
     return (
         <div className="mt-3">
