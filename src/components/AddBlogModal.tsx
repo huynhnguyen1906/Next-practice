@@ -3,6 +3,9 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import { toast } from 'react-toastify';
+import { addBlog } from '@/api/blogs';
+import { mutate } from 'swr';
 
 interface Props {
     showModal: boolean;
@@ -22,12 +25,18 @@ function AddBlogModal(props: Props) {
         setShowModal(false);
     };
 
-    const handleSubmit = () => {
-        console.log('title =>>>>', title);
-        console.log('author =>>>>', author);
-        console.log('content =>>>>', content);
-        handleClose();
+    const handleSubmit = async () => {
+        try {
+            await addBlog(title, author, content);
+            toast.success('Blog added successfully');
+            mutate('/blogs');
+            handleClose();
+        } catch (error: any) {
+            toast.error('Failed to add blog');
+            toast.error(error.message);
+        }
     };
+
     return (
         <>
             <Modal
@@ -42,7 +51,6 @@ function AddBlogModal(props: Props) {
                     <Modal.Title>Add a blog</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {' '}
                     <Form>
                         <Form.Group className="mb-3">
                             <Form.Label>Title</Form.Label>
@@ -74,20 +82,10 @@ function AddBlogModal(props: Props) {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button
-                        variant="secondary"
-                        onClick={() => {
-                            handleClose();
-                        }}
-                    >
+                    <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button
-                        variant="primary"
-                        onClick={() => {
-                            handleSubmit();
-                        }}
-                    >
+                    <Button variant="primary" onClick={handleSubmit}>
                         Add
                     </Button>
                 </Modal.Footer>
