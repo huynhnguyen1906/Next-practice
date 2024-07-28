@@ -15,14 +15,20 @@ export default function Header() {
                         <Link className="nav-link" href="/">
                             Home
                         </Link>
-                        <Link className="nav-link" href="/facebook">
-                            Facebook
+                        <Link className="nav-link" href="/Blog">
+                            Blog
                         </Link>
-                        <Link className="nav-link" href="/youtube">
-                            Youtube
+                        <Link className="nav-link" href="/timer">
+                            Timer
                         </Link>
-                        <Link className="nav-link" href="/tiktok">
-                            Tiktok
+                        <Link className="nav-link" href="/color-picker">
+                            Color Picker
+                        </Link>
+                        <Link className="nav-link" href="/slider">
+                            Slider
+                        </Link>
+                        <Link className="nav-link" href="/thumbnail-slider">
+                            Thumbnail Slider
                         </Link>
                     </Nav>
                 </Navbar.Collapse>

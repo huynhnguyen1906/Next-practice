@@ -6,7 +6,7 @@ import IndexTable from '@/components/IndexTable';
 
 const fetcher = (url: string) => axiosInstance.get(url).then((res) => res.data);
 
-export default function Youtube() {
+export default function Blog() {
     const router = useRouter();
     const handleNavigation = () => {
         router.push('/');

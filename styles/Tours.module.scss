@@ -1,0 +1,102 @@
+@import '/styles/variables';
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    overflow: hidden;
+    .toursWrap {
+        width: 100%;
+        margin: 50px auto 0;
+        padding: 0 50px;
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+        height: auto;
+        .toursContent {
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .pref {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                .ToursPlace {
+                    font-size: 20px;
+                }
+            }
+            .toursPrice {
+                font-size: 20px;
+            }
+            .toursTtl {
+                margin: 10px 0 5px;
+                font-size: 36px;
+            }
+            .text {
+                margin-top: 60px;
+                font-size: 16px;
+            }
+            .attn {
+                margin: 25px 0 75px;
+                font-size: 14px;
+                color: #d04848;
+            }
+            .appt {
+                p {
+                    font-size: 22px;
+                    &:first-child {
+                        margin-bottom: 10px;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        .toursWrap {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 25px;
+            .toursContent {
+                order: 2;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .container {
+        margin: 0;
+        padding: 20px;
+        .toursWrap {
+            padding: 0;
+            margin: 0;
+            gap: 0;
+            gap: 3rem;
+            .toursContent {
+                .toursTtl {
+                    font-size: 24px;
+                }
+                .text {
+                    margin-top: 10px;
+                }
+                p {
+                    font-size: 14px;
+                }
+                .attn {
+                    margin: 8px 0 10px;
+                    font-size: 12px;
+                }
+                .toursPrice {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
