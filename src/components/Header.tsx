@@ -21,6 +21,9 @@ export default function Header() {
                         <Link className="nav-link" href="/timer">
                             Timer
                         </Link>
+                        <Link className="nav-link" href="/count-down">
+                            Count down
+                        </Link>
                         <Link className="nav-link" href="/color-picker">
                             Color Picker
                         </Link>
